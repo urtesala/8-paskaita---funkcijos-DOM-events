@@ -49,7 +49,6 @@ artBtn.addEventListener("click", () => {
 // 9. paspaudus <button>delete first li from list</button> istrinti pirma li el is <ol>
 const liDelete = document.querySelector("li:nth-child(1)");
 const deleteBtn = document.querySelector("button:nth-child(3)");
-console.log("deleteBtn ===", deleteBtn);
 deleteBtn.addEventListener("click", () => {
   liDelete.remove();
 });
@@ -69,13 +68,38 @@ colBtn.addEventListener("click", () => (changeCol.style.color = "blue"));
 
 //^ 12. gauti ir iskonsolinti kiek elementu yra ol saraso elemente.
 
+const olList = document.querySelectorAll("ol li");
+console.log("olList ===", olList.length);
+
 //^ 13. su js padidinti visu ol li elementu teksto raides i upperCase
+
+// const olUp = document.querySelectorAll("ol li");
+// console.log("olUp ===", olUp);
+
+//!
 
 //^ 14. prie esamos  <h3 class="blog__title">Hello people</h3> prideti teksta '--Naujiena--'
 
+const blogTitle = document.querySelector("blog.title")[0];
+console.log("blogTitle ===", blogTitle);
+blogTitle.textContent += " --Naujiena--";
+
+//! kodel neveike su class?
+
 //^ 15. prie esamos  <p class="blog__text">Sveiki cia James.</p> prideti "as esu is Londono"
 
+// const blogText = document.getElementsByClassName("blog__text"[0]);
+// console.log("blogText ===", blogText);
+// blogText[0] += " As esu is Londono.";
+
+//! SAME, kodel neveikia su class ir query selector?
+
 //^ 16.  <button>light</button> padaro <article class="blog"> fona juoda o teksta balta
+
+// artBtn.addEventListener("click", () => {
+//   (articleCol.style.backgroundColor = "black"),
+//     (articleCol.style.color = "white");
+// });
 
 //^ 17.  <button>dark</button> padaro <article class="blog"> texta juoda o fona balta
 
