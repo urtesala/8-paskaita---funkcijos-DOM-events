@@ -73,16 +73,20 @@ console.log("olList ===", olList.length);
 
 //^ 13. su js padidinti visu ol li elementu teksto raides i upperCase
 
-// const olUp = document.querySelectorAll("ol li");
-// console.log("olUp ===", olUp);
+const olUp = document.querySelectorAll(".numberList>li");
+console.log("olUp ===", olUp);
+for (let liEl of olUp) {
+  liEl.textContent.toUpperCase();
+  liEl.textContent = liEl.textContent.toUpperCase();
+}
 
 //!
 
 //^ 14. prie esamos  <h3 class="blog__title">Hello people</h3> prideti teksta '--Naujiena--'
 
-const blogTitle = document.querySelector("blog.title")[0];
-console.log("blogTitle ===", blogTitle);
-blogTitle.textContent += " --Naujiena--";
+// const blogTitle = document.querySelector("blog.title")[0];
+// console.log("blogTitle ===", blogTitle);
+// blogTitle.textContent += " --Naujiena--";
 
 //! kodel neveike su class?
 
@@ -107,7 +111,19 @@ blogTitle.textContent += " --Naujiena--";
 
 //^ 19. <div class="box-container"></div> i vidu ikelti paragrafa su tekstu "i am dynamic" (innerHTML)
 
+const boxContainerEl = document.querySelector(".box-container");
+console.log("boxContainerEl ===", boxContainerEl);
+const pElHtml = "<p>I am dynamic! Yaaa</p>";
+
+boxContainerEl.innerHTML = pElHtml;
 //^ 20.  <button>add paragraph</button> paspaudus ivyksta 19ta uzduotis
+
+const addP = document.getElementById("addPar");
+addP.addEventListener("click", createAndAddP);
+
+function createAndAddP() {
+  boxContainerEl.innerHTML += pElHtml;
+}
 
 //^ 21. <button>Turn <span>dark</span> mode on</button> paspaudus pakeiciam teksta dark i light
 
